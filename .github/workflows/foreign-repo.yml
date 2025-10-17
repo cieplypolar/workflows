@@ -11,11 +11,11 @@ jobs:
         uses: actions/checkout@v5
         with:
           path: main
-      - name: Checkout (foreign repo)
-        uses: actions/checkout@v5
-        with:
-          repository: software-mansion/TypeGPU
-          path: typegpu
+      # - name: Checkout (foreign repo)
+      #   uses: actions/checkout@v5
+      #   with:
+      #     repository: software-mansion/TypeGPU
+      #     path: typegpu
 
       - name: Setup tmate session
-        uses: mxschmitt/action-tmate@master
+        uses: mxschmitt/action-tmate@v3
