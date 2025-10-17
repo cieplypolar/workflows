@@ -8,6 +8,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout (not foreign repo)
-        uses: actions/checkout@v4
+        uses: actions/checkout@master
+      - name: Checkout (foreign repo)
+        uses: actions/checkout@master
+        with:
+          repository: software-mansion/TypeGPU
+          ref: refs/heads/main
       - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
+        uses: mxschmitt/action-tmate@master
