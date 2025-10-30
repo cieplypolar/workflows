@@ -19,7 +19,6 @@ Inside each file is array of JSONs of the following format
   1. wgsl-resolution should return 0 calls
   2. fluid-with-atomics is broken at v0.7.1, but fixed on main (resetGame) :(
   3. ascii-filter
-- [ ] rewrite benchmark.template.new from .old
-- [ ] test with new release v0.8.0
-- [ ] change format of the output to match this from browser.test
-- [ ] why there are no buttons in vitest browser, but in mocking they are present and clickable
+- [X] rewrite benchmark.template.new from .old
+- [X] test with new release v0.8.0
+- [ ] fork TypeGPU repo to create CI tool
