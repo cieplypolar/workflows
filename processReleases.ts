@@ -52,10 +52,6 @@ async function processRelease() {
     for (const tag of tagsFiltered) {
       const repoPath = path.join(tmpDir, tag);
 
-      if (tag !== 'v0.8.0') {
-        continue;
-      }
-
       try {
         await git.clone(github, repoPath, ['--depth=1', `--branch=${tag}`]);
       } catch (_) {
