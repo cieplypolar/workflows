@@ -8,8 +8,8 @@ This document explains how to run and maintain the TypeGPU resolve benchmarks. T
 1. **Manual Workflow Trigger**
    The benchmark workflow should be triggered manually to ensure that the latest tag is present.
 
-   > [!NOTE]
-   > The script iterates through all releases and currently takes ~1 hour to complete (as of typegpu@v0.8.0).
+> [!NOTE]
+> The script iterates through all releases and currently takes ~1 hour to complete (as of typegpu@v0.8.0).
 
 2. **Repository Permissions**
    The GitHub Actions runner must have permission to push updates to this repository to store new benchmark results.
