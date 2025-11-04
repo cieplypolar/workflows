@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "measure": "deno run --allow-all processReleases.ts && rm -rf tmp",
-    "local:conf": "source .venv/bin/activate && pip install -r requirements.txt",
+    "local:env": "source .venv/bin/activate && pip install -r requirements.txt",
     "plot": "python3 plotter.py"
   },
   "engines": {

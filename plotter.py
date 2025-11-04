@@ -21,7 +21,7 @@ for json_file in data_folder.glob("*.json"):
 
 df = pd.DataFrame(all_data)
 
-# (Optional) drop rows with resolveDuration
+# (Optional) drop rows with resolveDuration = 0
 df = df[df["resolveDuration"] != 0]
 
 # === PLOTTING ===

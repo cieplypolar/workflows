@@ -1,1 +1,1 @@
-Here lie the results of release benchmarks
+Here lie the results of the benchmarks

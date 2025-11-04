@@ -2,13 +2,12 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
-    "esModuleInterop": true,
-    "allowImportingTsExtensions": true,
-    "moduleResolution": "bundler",
     "noEmit": true,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
     "lib": ["ESNext", "DOM"],
     "strict": true,
     "types": ["@webgpu/types"]
   },
-  "exclude": ["tmp"]
+  "exclude": ["tmp", "templates"]
 }

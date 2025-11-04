@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 export function getExampleURLs(category: string, name: string): {
   html: string;
   ts: string;

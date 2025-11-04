@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 /**
  * @vitest-environment jsdom
  */

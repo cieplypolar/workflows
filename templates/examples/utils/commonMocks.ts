@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { beforeEach, vi } from 'vitest';
 import { createDeepNoopProxy } from './testUtils.ts';
 

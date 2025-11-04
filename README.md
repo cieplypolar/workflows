@@ -1,24 +1,54 @@
-# Benchmarks
-## Instructions
-1. These scripts are intended to be invoked in CI virtual machine. The CI job should be invoked manually in order to make sure that latest tag is present.
-2. The CI has to have rights to push to this repo to update `benchmarks`.
-3. The benchmarks are stored in `benchmarks` directory. Each file is separate release.
-Inside each file is array of JSONs of the following format
-```
-{
-  resolveDuration: number,
-  compileDuration: number,
-  wgslSize: number,
-}
-```
+# TypeGPU Resolve Benchmarks
 
-## TODO
-- [X] add vitest - don't have to, repo will handle it itself
-- [X] hardcode all previous releases
-- [X] ascii-filter, fluid-with-atomics, wgsl-resolution test don't call createShaderModule
-  1. wgsl-resolution should return 0 calls
-  2. fluid-with-atomics is broken at v0.7.1, but fixed on main (resetGame) :(
-  3. ascii-filter
-- [X] rewrite benchmark.template.new from .old
-- [X] test with new release v0.8.0
-- [ ] fork TypeGPU repo to create CI tool
+## Overview
+This document explains how to run and maintain the TypeGPU resolve benchmarks. These benchmarks are executed in a GitHub Actions virtual machine and help track performance across releases.
+
+## Usage Instructions
+
+1. **Manual Workflow Trigger**
+   The benchmark workflow should be triggered manually to ensure that the latest tag is present.
+
+   > [!NOTE]
+   > The script iterates through all releases and currently takes ~1 hour to complete (as of typegpu@v0.8.0).
+
+2. **Repository Permissions**
+   The GitHub Actions runner must have permission to push updates to this repository to store new benchmark results.
+
+3. **Benchmark Storage**
+   Benchmark data is stored in the `benchmarks` directory.
+   - Each file corresponds to a single release.
+   - Each file contains a JSON object with the following structure:
+
+   ```ts
+   {
+     resolutionMetrics: [
+       resolveDuration: number,
+       compileDuration: number,
+       wgslSize: number,
+     ]
+   }
+   ```
+
+4. **Installing Dependencies**
+   We use `pnpm` as the package manager, so install dependencies with:
+   ```bash
+   pnpm install
+   ```
+   Also, make sure that you have `deno` and `python` installed.
+
+5. **Running Benchmarks Locally**
+   To run the benchmarks locally:
+   ```bash
+   pnpm run measure
+   ```
+
+6. **Plotting Results**
+   To generate benchmark plots:
+   - Create a Python 3 virtual environment
+   - Run:
+     ```bash
+     pnpm run local:env && pnpm run plot
+     ```
+
+7. **Fetching Plots**
+   Generated plot PNG files are stored in the `plots` directory and can be fetched for displaying on the main website.
