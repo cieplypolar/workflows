@@ -22,9 +22,11 @@ This document explains how to run and maintain the TypeGPU resolve benchmarks. T
    ```ts
    {
      resolutionMetrics: [
-       resolveDuration: number,
-       compileDuration: number,
-       wgslSize: number,
+       {
+         resolveDuration: number,
+         compileDuration: number,
+         wgslSize: number,
+       }
      ]
    }
    ```
